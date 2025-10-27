@@ -43,4 +43,16 @@ you through starting Ollama and OpenMemory. The scripts include helpful comments
 - Optionally change the embedder provider or model.
 - Add production hardening: API keys, TLS, backups, retention policies.
 
+## Citation
+This project is based on the work of the `mem0ai/mem0` repository. Please cite their work if you use this project.
+
+```bibtex
+@article{mem0,
+  title={Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory},
+  author={Chhikara, Prateek and Khant, Dev and Aryan, Saket and Singh, Taranjeet and Yadav, Deshraj},
+  journal={arXiv preprint arXiv:2504.19413},
+  year={2025}
+}
+```
+
 --- End of README
