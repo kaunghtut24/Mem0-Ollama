@@ -1,0 +1,29 @@
+# Example docker-compose for OpenMemory with persistent volumes (override)
+version: '3.8'
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    volumes:
+      - ./data/qdrant:/qdrant/storage
+    ports:
+      - "6333:6333"
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: openmemory
+      POSTGRES_PASSWORD: openmemory
+      POSTGRES_DB: openmemory
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  openmemory:
+    image: ghcr.io/mem0ai/openmemory:latest
+    ports:
+      - "8765:8765"
+    environment:
+      - DATABASE_URL=postgresql://openmemory:openmemory@postgres:5432/openmemory
+      - QDRANT_URL=http://qdrant:6333
+    depends_on:
+      - postgres
+      - qdrant

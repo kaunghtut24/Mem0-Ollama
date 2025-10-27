@@ -1,0 +1,13 @@
+{
+  "name": "mem0-ollama-node-example",
+  "version": "0.1.0",
+  "description": "Mem0 + Ollama quick example",
+  "main": "test_mem0_ollama.js",
+  "scripts": {
+    "start": "node test_mem0_ollama.js"
+  },
+  "dependencies": {
+    "mem0ai": "^0.0.1",
+    "dotenv": "^16.0.0"
+  }
+}
